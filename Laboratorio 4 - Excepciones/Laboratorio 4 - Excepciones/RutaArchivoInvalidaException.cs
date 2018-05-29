@@ -10,9 +10,18 @@ namespace Laboratorio_4___Excepciones
     public class RutaArchivoInvalidaException : DirectoryNotFoundException
     {
         const string error = "La ruta del archivo es inválida";
-        ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
-        string archivo = @"C:\Users\Vero\Documents\GitHub\Laboratorio4\Laboratorio 4 - Excepciones\hola";
+        LeerArchivo leerArchivo = LeerArchivo.GetInstance();
 
-
+        public RutaArchivoInvalidaException() : base(error)
+        {
+            try
+            {
+                leerArchivo.ReadFile();
+            }
+            catch (DirectoryNotFoundException)
+            {
+                DateTimeNow dateTimeNow = new DateTimeNow(leerArchivo.Archivo, error);
+            }            
+        }
     }
 }
