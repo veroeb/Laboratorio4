@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_4___Excepciones
 {
-    class Program
+    public class DateTimeNow
     {
-        static void Main(string[] args)
+        public DateTimeNow(string archivo, string error)
         {
-            ArchivoNoEncontradoException a = new ArchivoNoEncontradoException();
-
-            Console.ReadKey();
+            string d = DateTime.Now.ToString();
+            Console.WriteLine($"[{d}] {error}: {archivo}");
         }
     }
 }

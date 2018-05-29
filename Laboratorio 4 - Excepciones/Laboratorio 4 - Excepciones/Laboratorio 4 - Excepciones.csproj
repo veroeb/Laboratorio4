@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivoNoEncontradoException.cs" />
+    <Compile Include="DateTimeNow.cs" />
+    <Compile Include="ManejadorDeArchivos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RutaArchivoInvalidaException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
