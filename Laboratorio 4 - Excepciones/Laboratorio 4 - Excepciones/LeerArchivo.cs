@@ -8,13 +8,26 @@ namespace Laboratorio_4___Excepciones
 {
     public class LeerArchivo
     {
+        static LeerArchivo _instance;
+        static  ManejadorDeArchivos miManejador;
         public string Archivo { get; set; }
+        
+        public static LeerArchivo GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new LeerArchivo();
+                miManejador = new ManejadorDeArchivos();
+            }
+            return _instance;
+        }
+
         public void ReadFile()
         {
             Console.WriteLine("Ingrese la ruta del archivo:");
-            ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
             Archivo = Console.ReadLine();
-            manejadorDeArchivos.Leer(Archivo);
+            miManejador.Leer(Archivo);
+            Console.WriteLine();
         }
     }
 }

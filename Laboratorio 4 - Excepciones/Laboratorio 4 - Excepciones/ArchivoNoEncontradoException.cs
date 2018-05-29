@@ -12,7 +12,8 @@ namespace Laboratorio_4___Excepciones
         const string error = "Archivo no encontrado";
         //ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
         //readonly string archivo = Console.ReadLine();
-        LeerArchivo leerArchivo = new LeerArchivo();
+        //LeerArchivo l = LeerArchivo.Getinstance().ReadFile();
+        LeerArchivo leerArchivo = LeerArchivo.GetInstance();
 
         public ArchivoNoEncontradoException() : base(error)
         {
