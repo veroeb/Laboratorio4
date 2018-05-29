@@ -14,6 +14,7 @@ namespace Laboratorio_4___Excepciones
 
             ArchivoNoEncontradoException a = new ArchivoNoEncontradoException();
 
+            RutaArchivoInvalidaException r = new RutaArchivoInvalidaException();
 
             Console.ReadKey();
         }

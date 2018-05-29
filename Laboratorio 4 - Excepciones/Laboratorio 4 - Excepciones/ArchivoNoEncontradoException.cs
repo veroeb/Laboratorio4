@@ -16,16 +16,11 @@ namespace Laboratorio_4___Excepciones
         {
             try
             {
-                //manejadorDeArchivos.Leer(archivo);
                 leerArchivo.ReadFile();
             }
             catch (FileNotFoundException)
             {
                 DateTimeNow dateTimeNow = new DateTimeNow(leerArchivo.Archivo, error);
-            }
-            finally
-            {
-                Console.WriteLine("Se ejecutó el bloque finally");
             }
 
 

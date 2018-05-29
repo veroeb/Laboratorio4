@@ -26,8 +26,8 @@ namespace Laboratorio_4___Excepciones
         {
             Console.WriteLine("Ingrese la ruta del archivo:");
             Archivo = Console.ReadLine();
-            miManejador.Leer(Archivo);
             Console.WriteLine();
+            miManejador.Leer(Archivo);
         }
     }
 }
