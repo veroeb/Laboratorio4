@@ -10,18 +10,20 @@ namespace Laboratorio_4___Excepciones
     public class ArchivoNoEncontradoException : FileNotFoundException
     {
         const string error = "Archivo no encontrado";
-        ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
-        string archivo = @"C:\Users\Vero\Documents\GitHub\Laboratorio4\Laboratorio 4 - Excepciones\hola.txt";
+        //ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
+        //readonly string archivo = Console.ReadLine();
+        LeerArchivo leerArchivo = new LeerArchivo();
 
         public ArchivoNoEncontradoException() : base(error)
         {
             try
             {
-                manejadorDeArchivos.Leer(archivo);
+                //manejadorDeArchivos.Leer(archivo);
+                leerArchivo.ReadFile();
             }
             catch (FileNotFoundException)
             {
-                DateTimeNow dateTimeNow = new DateTimeNow(archivo, error);
+                DateTimeNow dateTimeNow = new DateTimeNow(leerArchivo.Archivo, error);
             }
             finally
             {
@@ -29,9 +31,9 @@ namespace Laboratorio_4___Excepciones
             }
 
 
-            //if (!File.Exists(@"C:\Users\Vero\Documents\GitHub\Laboratorio4\Laboratorio 4 - Excepciones\hola.txt"))
+            //if (!File.Exists(archivo))
             //{
-            //    throw new FileNotFoundException(text);
+            //    throw new FileNotFoundException(error);
             //}
         }
     }

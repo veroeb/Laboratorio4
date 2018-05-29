@@ -10,7 +10,10 @@ namespace Laboratorio_4___Excepciones
     {
         static void Main(string[] args)
         {
+            //Console.WriteLine("Por favor ingrese la ruta del archivo:");
+
             ArchivoNoEncontradoException a = new ArchivoNoEncontradoException();
+
 
             Console.ReadKey();
         }
