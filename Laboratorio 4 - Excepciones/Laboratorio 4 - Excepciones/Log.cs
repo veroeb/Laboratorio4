@@ -31,13 +31,13 @@ namespace Laboratorio_4___Excepciones
 
         public void Init(string logPath) { path = logPath; }
 
-        public void DoLog(string log)
+        public void DoLog(string textoALoguear)
         {
             try
             {
                 using (StreamWriter elArchivo = File.AppendText(path))
                 {
-                    elArchivo.WriteLine(DateTime.Now.ToString($"yyyy-MM-dd HH:mm:ss {log}"));
+                    elArchivo.WriteLine(DateTime.Now.ToString($"yyyy-MM-dd HH:mm:ss {textoALoguear}"));
                     elArchivo.Close();
                 }
             }
