@@ -11,6 +11,9 @@ namespace Laboratorio_4___Excepciones
         const string error = "Archivo no encontrado";
         LeerArchivo leerArchivo = LeerArchivo.GetInstance();
 
+        public CaracteresInvalidosException() : base (error)
+        {
 
+        }
     }
 }

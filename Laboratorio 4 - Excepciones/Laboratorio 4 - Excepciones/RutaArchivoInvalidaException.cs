@@ -20,7 +20,7 @@ namespace Laboratorio_4___Excepciones
             }
             catch (DirectoryNotFoundException)
             {
-                DateTimeNow dateTimeNow = new DateTimeNow(leerArchivo.Archivo, error);
+                Log dateTimeNow = new Log(leerArchivo.Archivo, error);
             }            
         }
     }

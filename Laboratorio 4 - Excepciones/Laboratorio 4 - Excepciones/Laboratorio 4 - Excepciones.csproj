@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="ArchivoNoEncontradoException.cs" />
     <Compile Include="CaracteresInvalidosException.cs" />
-    <Compile Include="DateTimeNow.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="LeerArchivo.cs" />
     <Compile Include="ManejadorDeArchivos.cs" />
     <Compile Include="Program.cs" />

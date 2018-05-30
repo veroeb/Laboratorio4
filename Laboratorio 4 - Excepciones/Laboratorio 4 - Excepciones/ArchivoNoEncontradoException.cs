@@ -11,6 +11,7 @@ namespace Laboratorio_4___Excepciones
     {
         const string error = "Archivo no encontrado";
         LeerArchivo leerArchivo = LeerArchivo.GetInstance();
+        Log log = Log.GetInstance();
 
         public ArchivoNoEncontradoException() : base(error)
         {
@@ -20,7 +21,8 @@ namespace Laboratorio_4___Excepciones
             }
             catch (FileNotFoundException)
             {
-                DateTimeNow dateTimeNow = new DateTimeNow(leerArchivo.Archivo, error);
+                //Log dateTimeNow = new Log(leerArchivo.Archivo, error);
+                log.DoLog(error);
             }
 
 
