@@ -7,9 +7,18 @@ namespace Laboratorio_4___Excepciones
     public class ManejadorDeArchivos
     {
 
-        public void Escribir(String nomArchivo, String texto)
+        public void Escribir(String path, String texto)
         {
-            StreamWriter writer = new StreamWriter(nomArchivo, true);
+            if (! File.Exists(path))
+            {
+                throw new ArchivoNoEncontradoException("Archivo no encontrado");
+            }
+            else if (Directory.Exists(path))
+            {
+                throw new RutaArchivoInvalidaException("Directorio inválido");
+            }
+
+            StreamWriter writer = new StreamWriter(path, true);
             writer.WriteLine(texto);
             writer.Close();
         }

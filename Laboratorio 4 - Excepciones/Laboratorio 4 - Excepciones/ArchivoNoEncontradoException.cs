@@ -7,29 +7,13 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_4___Excepciones
 {
+    
     public class ArchivoNoEncontradoException : FileNotFoundException
     {
-        const string error = "Archivo no encontrado";
-        LeerArchivo leerArchivo = LeerArchivo.GetInstance();
-        Log log = Log.GetInstance();
-
-        public ArchivoNoEncontradoException() : base(error)
+        public static Int32 CantidadVecesExcepcion { get; set; }
+        public ArchivoNoEncontradoException(String error) : base(error)
         {
-            try
-            {
-                leerArchivo.ReadFile();
-            }
-            catch (FileNotFoundException)
-            {
-                //Log dateTimeNow = new Log(leerArchivo.Archivo, error);
-                log.DoLog(error);
-            }
-
-
-            //if (!File.Exists(archivo))
-            //{
-            //    throw new FileNotFoundException(error);
-            //}
+            CantidadVecesExcepcion++;
         }
     }
 }

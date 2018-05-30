@@ -9,19 +9,10 @@ namespace Laboratorio_4___Excepciones
 {
     public class RutaArchivoInvalidaException : DirectoryNotFoundException
     {
-        const string error = "La ruta del archivo es inválida";
-        LeerArchivo leerArchivo = LeerArchivo.GetInstance();
-
-        public RutaArchivoInvalidaException() : base(error)
+        public static Int32 CantidadVecesExcepcion { get; set; }
+        public RutaArchivoInvalidaException(String error) : base(error)
         {
-            try
-            {
-                leerArchivo.ReadFile();
-            }
-            catch (DirectoryNotFoundException)
-            {
-                Log dateTimeNow = new Log(leerArchivo.Archivo, error);
-            }            
+            CantidadVecesExcepcion++;
         }
     }
 }

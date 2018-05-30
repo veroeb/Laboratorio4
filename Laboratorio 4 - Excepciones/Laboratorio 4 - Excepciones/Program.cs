@@ -10,11 +10,28 @@ namespace Laboratorio_4___Excepciones
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Por favor ingrese la ruta del archivo:");
+            ManejadorDeArchivos m = new ManejadorDeArchivos();
+            try
+            {
+                Log.GetInstancia().Escribir("c:/pepe.txt", "Intentando escribir en");
+                m.Escribir("c:/pepe.txt", "hola");
 
-            ArchivoNoEncontradoException a = new ArchivoNoEncontradoException();
+            }
+            catch (ArchivoNoEncontradoException e)
+            {
+                Log.GetInstancia().Escribir("c:/pepe.txt", e.Message, ArchivoNoEncontradoException.CantidadVecesExcepcion);
+            }
 
-            RutaArchivoInvalidaException r = new RutaArchivoInvalidaException();
+            try
+            {
+                Log.GetInstancia().Escribir("c:/pepe.txt", "Intentando escribir en");
+                m.Escribir("c:/pepe.txt", "hola");
+
+            }
+            catch (RutaArchivoInvalidaException e)
+            {
+                Log.GetInstancia().Escribir("c:/pepe.txt", e.Message, RutaArchivoInvalidaException.CantidadVecesExcepcion);
+            }
 
             Console.ReadKey();
         }
